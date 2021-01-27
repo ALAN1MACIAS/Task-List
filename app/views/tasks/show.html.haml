@@ -1,0 +1,20 @@
+%p#notice= notice
+
+%p
+  %strong Title: 
+  = @task.title
+%p
+  %strong Body:
+  = @task.body
+%p
+  %strong Lavel Importance: 
+  = @task.lavel_importance
+%p
+  %strong Status: 
+  = @task.status
+%p
+  %strong End date: 
+  = @task.end_date
+
+= link_to "Editar", edit_task_path(@task) | 
+= link_to "Atras", tasks_path

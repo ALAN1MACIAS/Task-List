@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @task.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @task.body %>
+</p>
+
+<p>
+  <strong>Lavel importance:</strong>
+  <%= @task.lavel_importance %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @task.status %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @task.end_date %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @task.color %>
+</p>
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>

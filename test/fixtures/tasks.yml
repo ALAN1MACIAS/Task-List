@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  body: MyText
+  lavel_importance: 1
+  status: MyString
+  end_date: 2021-01-27
+  color: MyString
+
+two:
+  title: MyString
+  body: MyText
+  lavel_importance: 1
+  status: MyString
+  end_date: 2021-01-27
+  color: MyString

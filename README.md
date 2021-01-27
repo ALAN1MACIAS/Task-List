@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+TASK LIST
+* Ruby version : 6.0.3.4
 
-Things you may want to cover:
+Personal project for the organization of tasks.
 
-* Ruby version
+Objetive:
 
-* System dependencies
+Improving my programming skills in ruby on rails. Creating a project that not only helps me to improve, but also can be used as an active project.
 
-* Configuration
+  + Login
+  + User registration
+  + Job Folders
+    - List of tasks
+    - Register new tasks
+    - Delete tasks
+    - Edit tasks
+    - Extract task list to PDF
+    - PDF task report
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    - Public or private folder
+    - With or without password
+  + Profile settings
+    - Name
+    - Email address
+    - Password
+    - Profile picture
+  + Alerts
+    - Unfinished tasks alert

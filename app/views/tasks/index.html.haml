@@ -2,26 +2,30 @@
 
 %p#notice= notice
 
-%h1 Tasks
-%table
-  %thead
-    %tr
-      %th Title
-      %th Body
-      %th Lavel importance
-      %th Status
-      %th End date
-      %th{:coldspan  => 3}
-    %tbody
-      - @tasks.each do |task|
-        %td= task.title
-        %td= task.body
-        %td= task.lavel_importance
-        %td= task.status
-        %td= task.end_date
-        %td= link_to 'Show', task
-        %td= link_to 'Edit', edit_task_path(task)
-        %td= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }
-%br/
-
-= link_to 'New Task', new_task_path
+.container
+  .row
+    .col-md-12
+      %h1 Tasks
+    .col-md-12
+      %table.table
+        %thead
+          %tr
+            %th Title
+            %th Body
+            %th Lavel importance
+            %th Status
+            %th End date
+            %th{:coldspan  => 3}
+          %tbody
+            - @tasks.each do |task|
+              %td= task.title
+              %td= task.body
+              %td= task.lavel_importance
+              %td= task.status
+              %td= task.end_date
+              %td= link_to 'Show', task
+              %td= link_to 'Edit', edit_task_path(task)
+              %td= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }
+      %br/
+      .col-md-12
+        = link_to 'New Task', new_task_path

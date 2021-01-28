@@ -3,7 +3,7 @@ class TaskstoragesController < ApplicationController
 
   # GET /taskstorages or /taskstorages.json
   def index
-    @taskstorages = Taskstorage.all
+    @taskstorages = current_user.taskstorages.all
   end
 
   # GET /taskstorages/1 or /taskstorages/1.json
@@ -21,7 +21,7 @@ class TaskstoragesController < ApplicationController
 
   # POST /taskstorages or /taskstorages.json
   def create
-    @taskstorage = Taskstorage.new(taskstorage_params)
+    @taskstorage = current_user.taskstorages.new(taskstorage_params)
 
     respond_to do |format|
       if @taskstorage.save

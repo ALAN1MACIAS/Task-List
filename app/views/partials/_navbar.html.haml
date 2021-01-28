@@ -7,16 +7,14 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        %a.navbar-brand(href="")
+        %a.navbar-brand
           TASKS 
           %i.glyphicon.glyphicon-time
           LIST
       .collapse.navbar-collapse#bs-example-navbar-collapse-1
         %ul.nav.navbar-nav
           %li.active
-            %a(href="")
-              Mis carpetas
-              %span.sr-only (current)
+            = link_to 'Mis carpetas', taskstorages_path
           %li
             %a(href="")Reportes
         %ul.nav.navbar-nav.navbar-right

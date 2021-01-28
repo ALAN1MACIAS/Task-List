@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   before_action :set_taskstorages, only: [:show,:new,:edit,:create]
 
   def index
-    @tasks = Task.all
+    @tasks = Task.where(taskstorage_id: params[:taskstorage_id])
   end
 
   def show

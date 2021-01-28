@@ -1,0 +1,23 @@
+= form_with(model: taskstorage, local: true) do |form|
+  .row
+    - if taskstorage.errors.any?
+      #error_explanation
+        %h2
+          = pluralize(taskstorage.errors.count, "error")
+          prohibited this taskstorage from being saved:
+      #error_explanation
+        %ul
+          = taskstorage.errors.full_messages.each do |message|
+            %li= message
+    .col-md-12
+      = form.label :title
+      = form.text_field :title, class: "form-control"
+    .col-md-12
+      = form.label :body
+      = form.text_area :body, class: "form-control"
+    .col-md-12
+      = form.label :sub_title
+      = form.text_field :sub_title, class: "form-control"
+    .col-md-12
+      %br/
+      = form.submit "Create", class: "btn btn-primary btn-sm"

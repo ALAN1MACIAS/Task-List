@@ -1,0 +1,18 @@
+%p#notice= notice
+
+.container
+  %i.glyphicon.glyphicon-level-up{style: "font-size:40px;"} Folders
+  %br/
+  %br/
+  .row
+    - @taskstorages.each do |taskstorage|
+      .col-sm-6.col-md-4
+        .thumbnail
+          = image_tag 'img.jpg'
+          .caption
+            %h3= taskstorage.title
+            %h5= taskstorage.sub_title
+            %p= taskstorage.body
+            = link_to "Mis tareas", taskstorage_tasks_path(taskstorage.id)
+    .col-sm-6.col-md-12
+      = link_to 'New Taskstorage', new_taskstorage_path

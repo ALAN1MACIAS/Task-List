@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_27_163626) do
+ActiveRecord::Schema.define(version: 2021_01_27_232602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 2021_01_27_163626) do
     t.string "color"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "taskstorage_id", null: false
+    t.index ["taskstorage_id"], name: "index_tasks_on_taskstorage_id"
   end
 
+  create_table "taskstorages", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.string "sub_title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "tasks", "taskstorages"
 end

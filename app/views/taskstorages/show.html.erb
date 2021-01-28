@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @taskstorage.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @taskstorage.body %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @taskstorage.sub_title %>
+</p>
+
+<%= link_to 'Edit', edit_taskstorage_path(@taskstorage) %> |
+<%= link_to 'Back', taskstorages_path %>

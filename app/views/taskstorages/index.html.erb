@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Taskstorages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @taskstorages.each do |taskstorage| %>
+      <tr>
+        <td><%= taskstorage.title %></td>
+        <td><%= taskstorage.body %></td>
+        <td><%= taskstorage.sub_title %></td>
+        <td><%= link_to 'Show', taskstorage %></td>
+        <td><%= link_to 'Edit', edit_taskstorage_path(taskstorage) %></td>
+        <td><%= link_to 'Destroy', taskstorage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Taskstorage', new_taskstorage_path %>

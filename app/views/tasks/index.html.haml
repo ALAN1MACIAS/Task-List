@@ -23,9 +23,9 @@
               %td= task.lavel_importance
               %td= task.status
               %td= task.end_date
-              %td= link_to 'Show', task
-              %td= link_to 'Edit', edit_task_path(task)
-              %td= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }
+              %td= link_to 'Ver', taskstorage_task_path(id: task.id)
+              %td= link_to 'Editar', edit_taskstorage_task_path(id: task.id)
+              %td= link_to 'Eliminar', taskstorage_task_path(id: task.id), :method => "delete", data: { confirm: 'Are you sure?' }
       %br/
       .col-md-12
-        = link_to 'New Task', new_task_path
+        = link_to 'New Task', new_taskstorage_task_path

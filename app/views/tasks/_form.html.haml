@@ -1,12 +1,12 @@
-= form_with(model: task, local: true) do |form|
+= form_with(model: [@taskstorage, @task]) do |form|
   .row
-    - if task.errors.any?
+    - if @task.errors.any?
       #error_explanation
         %h2 
-          = pluralize(task.errors.count, "error")
+          = pluralize(@task.errors.count, "error")
           "prohibited this task from being saved:"
         %ul
-          = task.errors.full_messages.each do |message|
+          = @task.errors.full_messages.each do |message|
             %li= message
     .col-md-12
       = form.label :title
@@ -27,4 +27,4 @@
       = form.label :color
       = form.color_field :color, class: "form-control"
     .col-md-12.mt-4
-      = form.submit "Actualizar", class: "btn btn-primary btn-sm"
+      = form.submit "Registrar", class: "btn btn-primary btn-sm"

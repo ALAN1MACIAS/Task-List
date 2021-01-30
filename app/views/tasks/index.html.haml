@@ -6,8 +6,9 @@
   .row
     .col-md-12
       %h1 Tasks
+      = link_to 'New Task', new_taskstorage_task_path, class: 'btn btn-primary btn-sm stretched-link', style: 'color: #fff'
     .col-md-12
-      %table.table
+      %table.table.table-striped
         %thead
           %tr
             %th Title
@@ -28,4 +29,4 @@
               %td= link_to 'Eliminar', taskstorage_task_path(id: task.id), :method => "delete", data: { confirm: 'Are you sure?' }
       %br/
       .col-md-12
-        = link_to 'New Task', new_taskstorage_task_path
+        

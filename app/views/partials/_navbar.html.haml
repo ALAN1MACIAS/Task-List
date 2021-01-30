@@ -13,10 +13,11 @@
           LIST
       .collapse.navbar-collapse#bs-example-navbar-collapse-1
         %ul.nav.navbar-nav
-          %li.active
-            = link_to 'Mis carpetas', taskstorages_path
-          %li
-            %a(href="")Reportes
+          -if user_signed_in?
+            %li.active
+              = link_to 'Mis carpetas', taskstorages_path
+            %li
+              %a(href="")Reportes
         %ul.nav.navbar-nav.navbar-right
           %li.dropdown
             %a.dropdown-togle{:"data-toggle" => "dropdown", :role => "button", :"aria-haspopup" => "true", :"aria-expanded" => "false"}(href="")

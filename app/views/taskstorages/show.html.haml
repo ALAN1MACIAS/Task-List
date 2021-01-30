@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Title
+  = @taskstorage.title
+%p
+  %strong Body
+  = @taskstorage.body
+%p
+  %strong Sub Title
+  = @taskstorage.sub_title
+
+= link_to 'Edit', edit_taskstorage_path(@taskstorage) | 
+= link_to 'Back', taskstorages_path

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Userconfigs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellidop</th>
+      <th>Apellidom</th>
+      <th>Descripcion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @userconfigs.each do |userconfig| %>
+      <tr>
+        <td><%= userconfig.nombre %></td>
+        <td><%= userconfig.apellidop %></td>
+        <td><%= userconfig.apellidom %></td>
+        <td><%= userconfig.descripcion %></td>
+        <td><%= link_to 'Show', userconfig %></td>
+        <td><%= link_to 'Edit', edit_userconfig_path(userconfig) %></td>
+        <td><%= link_to 'Destroy', userconfig, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Userconfig', new_userconfig_path %>

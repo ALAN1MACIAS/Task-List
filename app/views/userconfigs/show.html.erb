@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @userconfig.nombre %>
+</p>
+
+<p>
+  <strong>Apellidop:</strong>
+  <%= @userconfig.apellidop %>
+</p>
+
+<p>
+  <strong>Apellidom:</strong>
+  <%= @userconfig.apellidom %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @userconfig.descripcion %>
+</p>
+
+<%= link_to 'Edit', edit_userconfig_path(@userconfig) %> |
+<%= link_to 'Back', userconfigs_path %>

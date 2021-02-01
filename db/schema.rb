@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_28_221923) do
+ActiveRecord::Schema.define(version: 2021_02_01_051025) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,17 @@ ActiveRecord::Schema.define(version: 2021_01_28_221923) do
     t.index ["user_id"], name: "index_taskstorages_on_user_id"
   end
 
+  create_table "userconfigs", force: :cascade do |t|
+    t.string "nombre"
+    t.string "apellidop"
+    t.string "apellidom"
+    t.text "descripcion"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_userconfigs_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -52,4 +63,5 @@ ActiveRecord::Schema.define(version: 2021_01_28_221923) do
 
   add_foreign_key "tasks", "taskstorages"
   add_foreign_key "taskstorages", "users"
+  add_foreign_key "userconfigs", "users"
 end

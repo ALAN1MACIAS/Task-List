@@ -21,7 +21,8 @@ class UserconfigsController < ApplicationController
 
   # POST /userconfigs or /userconfigs.json
   def create
-    @userconfig = current_user.userconfig.new(userconfig_params)
+    # No permite registrar nada si el usuario ya creo su configuración
+    @userconfig = current_user.build_userconfig(userconfig_params) unless current_user.userconfig
 
     respond_to do |format|
       if @userconfig.save

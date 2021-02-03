@@ -25,10 +25,11 @@ class UserconfigsController < ApplicationController
     @userconfig = current_user.build_userconfig(userconfig_params) unless current_user.userconfig
 
     respond_to do |format|
-      if @userconfig.save
+      if !@userconfig.nil? and @userconfig.save
         format.html { redirect_to @userconfig, notice: "Userconfig was successfully created." }
         format.json { render :show, status: :created, location: @userconfig }
       else
+        @userconfig = Userconfig.new
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @userconfig.errors, status: :unprocessable_entity }
       end

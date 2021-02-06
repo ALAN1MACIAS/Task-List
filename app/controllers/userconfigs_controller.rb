@@ -1,5 +1,6 @@
 class UserconfigsController < ApplicationController
-  before_action :set_userconfig, only: %i[ show edit update destroy ]
+  before_action :set_userconfig, only: %i[ show edit update destroy]
+  before_action :set_action_new_update, only: %i[new_update]
 
   # GET /userconfigs or /userconfigs.json
   def index
@@ -13,6 +14,10 @@ class UserconfigsController < ApplicationController
   # GET /userconfigs/new
   def new
     @userconfig = Userconfig.new
+  end
+
+  def new_update
+    
   end
 
   # GET /userconfigs/1/edit
@@ -67,5 +72,14 @@ class UserconfigsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def userconfig_params
       params.require(:userconfig).permit(:nombre, :apellidop, :apellidom, :descripcion)
+    end
+
+    def set_action_new_update
+      user = Userconfig.where(user_id: params[:id])
+      if current_user.userconfig
+        user.each { |val| redirect_to edit_userconfig_path(val.id) }
+      else
+        redirect_to new_userconfig_path
+      end
     end
 end

@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  resources :userconfigs
+  resources :userconfigs do
+    member do
+      get :new_update
+    end
+  end
+
   get 'welcome/index'
   devise_for :users
+
   resources :taskstorages do
     resources :tasks
   end

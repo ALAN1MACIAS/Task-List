@@ -1,0 +1,24 @@
+= form_with(model: userconfig, local: true) do |form|
+  .row
+    - if userconfig.errors.any?
+      #error_explanation
+      %h2
+        = pluralize(userconfig.errors.count, "error")
+        "prohibited this userconfig from being saved:"
+      %ul
+        = userconfig.errors.full_messages.each do |message|
+          %li= message
+    .col-md-12
+      = form.label :nombre
+      = form.text_field :nombre, class: "form-control"
+    .col-md-12 
+      = form.label :apellidop
+      = form.text_field :apellidop, class: "form-control"
+    .col-md-12 
+      = form.label :apellidom
+      = form.text_field :apellidom, class: "form-control"
+    .col-md-12
+      = form.label :descripcion
+      =form.text_area :descripcion, class: "form-control"
+    .col-md-6
+      = form.submit "Save", class: "btn btn-primary"

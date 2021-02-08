@@ -1,3 +1,19 @@
 // Place all the styles related to the taskstorages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+a:link, a:visited, a:active {
+  text-decoration:none;
+}
+
+.my-staks{
+  color: #fff;
+  background-color: #b6b300;
+  margin-top: 5px;
+  padding: 1rem;
+  border-radius: 5%;
+}
+
+.my-staks:hover{
+  color: #fff !important;
+  background-color: #706e00 !important;
+}

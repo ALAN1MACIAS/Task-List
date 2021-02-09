@@ -13,7 +13,30 @@ a:link, a:visited, a:active {
   border-radius: 5%;
 }
 
-.my-staks:hover{
-  color: #fff !important;
-  background-color: #706e00 !important;
+.container{
+  .row{
+    .col-md-12{
+      margin-top: 5px;
+      .link-back{
+        color: #000000 !important;
+        background-color: #ff0000 !important;
+        padding: .6rem;
+        border-radius: 10%;
+      }
+      .link-edit{
+        color: #000000 !important;
+        background-color: #f1ed00 !important;
+        padding: .6rem;
+        border-radius: 10%;
+      }
+      .link-back:hover{
+        background-color: #be0000 !important;
+        transition: 0.2s ease;
+      }
+      .link-edit:hover{
+        background-color: #b8b500 !important;
+        transition: 0.2s ease;
+      }
+    }
+  }
 }

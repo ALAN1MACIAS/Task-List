@@ -31,12 +31,12 @@ class UserconfigsController < ApplicationController
 
     respond_to do |format|
       if !@userconfig.nil? and @userconfig.save
-        format.html { redirect_to @userconfig, notice: "Userconfig was successfully created." }
-        format.json { render :show, status: :created, location: @userconfig }
+        format.html { redirect_to taskstorages_path, notice: "Userconfig was successfully created." }
+        format.json { render :show, status: :created, location: taskstorages_path }
       else
         @userconfig = Userconfig.new
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @userconfig.errors, status: :unprocessable_entity }
+        format.json { render json: taskstorages_path.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -45,11 +45,11 @@ class UserconfigsController < ApplicationController
   def update
     respond_to do |format|
       if @userconfig.update(userconfig_params)
-        format.html { redirect_to @userconfig, notice: "Userconfig was successfully updated." }
-        format.json { render :show, status: :ok, location: @userconfig }
+        format.html { redirect_to taskstorages_path, notice: "Userconfig was successfully updated." }
+        format.json { render :show, status: :ok, location: taskstorages_path }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @userconfig.errors, status: :unprocessable_entity }
+        format.json { render json: taskstorages_path.errors, status: :unprocessable_entity }
       end
     end
   end

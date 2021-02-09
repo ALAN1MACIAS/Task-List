@@ -25,11 +25,11 @@ class TaskstoragesController < ApplicationController
 
     respond_to do |format|
       if @taskstorage.save
-        format.html { redirect_to @taskstorage, notice: "Taskstorage was successfully created." }
-        format.json { render :show, status: :created, location: @taskstorage }
+        format.html { redirect_to taskstorages_path, notice: "Taskstorage was successfully created." }
+        format.json { render :show, status: :created, location: taskstorages_path }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @taskstorage.errors, status: :unprocessable_entity }
+        format.json { render json: taskstorages_path.errors, status: :unprocessable_entity }
       end
     end
   end

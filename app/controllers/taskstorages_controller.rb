@@ -22,7 +22,7 @@ class TaskstoragesController < ApplicationController
   # POST /taskstorages or /taskstorages.json
   def create
     @taskstorage = current_user.taskstorages.new(taskstorage_params)
-
+    @taskstorage.user = current_user
     respond_to do |format|
       if @taskstorage.save
         format.html { redirect_to taskstorages_path, notice: "Taskstorage was successfully created." }
